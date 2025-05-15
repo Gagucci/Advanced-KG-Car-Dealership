@@ -8,7 +8,7 @@ public class SalesContract extends Contract{
     private boolean isFinancing;
     private double monthlyPayment;
 
-    public SalesContract(String date, String customerName, String customerEmail, String vehicleSold, double totalPrice, double monthlyPayment, double salesTax, double recordingFee, double processingFeeUnderThousand, double processingFeeOverThousand, boolean isFinancing, double monthlyPayment1) {
+    public SalesContract(String date, String customerName, String customerEmail, Vehicle vehicleSold, double totalPrice, double monthlyPayment, double salesTax, double recordingFee, double processingFeeUnderThousand, double processingFeeOverThousand, boolean isFinancing, double monthlyPayment1) {
         super(date, customerName, customerEmail, vehicleSold, totalPrice, monthlyPayment);
         SalesTax = salesTax;
         this.recordingFee = recordingFee;
@@ -18,9 +18,29 @@ public class SalesContract extends Contract{
         this.monthlyPayment = monthlyPayment1;
     }
 
+    public double getSalesTax() { return SalesTax; }
+    public double getRecordingFee() { return recordingFee; }
+    public double getProcessingFeeUnderThousand() { return processingFeeUnderThousand; }
+    public double getProcessingFeeOverThousand() { return processingFeeOverThousand; }
+    public boolean isFinancing() { return isFinancing; }
+    public double getMonthlyPayment1() { return monthlyPayment; }
+
+    public void setSalesTax(double salesTax) { SalesTax = salesTax; }
+    public void setRecordingFee(double recordingFee) { this.recordingFee = recordingFee; }
+    public void setProcessingFeeUnderThousand(double processingFeeUnderThousand) { this.processingFeeUnderThousand = processingFeeUnderThousand; }
+    public void setProcessingFeeOverThousand(double processingFeeOverThousand) { this.processingFeeOverThousand = processingFeeOverThousand; }
+    public void setFinancing(boolean financing) { isFinancing = financing; }
+    public void setMonthlyPayment(double monthlyPayment) { this.monthlyPayment = monthlyPayment; }
+
+
     @Override
     public double getTotalPrice() {
-        return 0;
+        //Calculate the total price of the vehicle sold
+        double price = getVehicleSold().getPrice();
+        double tax = price * SalesTax;
+        double processingFee = price < 10000 ? processingFeeUnderThousand : processingFeeOverThousand;
+
+        return price + tax + processingFee + recordingFee;
     }
 
     @Override
