@@ -1,0 +1,13 @@
+vin|year|make|model|vehicleType|color|odometer|price
+10112|1993|Ford|Explorer|SUV|Red|525123|995.0
+37846|2001|Ford|Ranger|SUV|Yellow|172544|1995.0
+44901|2012|Honda|Civic|SUV|Gray|103221|6995.0
+44902|2012|Honda|Civic|Sedan|Black|103221|7000.0
+12341|2024|Porsche|Taycan|Coupe|Gray|20000|80000.0
+56243|2020|Tesla|Model S|Sedan|White|25000|45000.0
+56245|2020|Tesla|Model X|SUV|Red|25000|60000.0
+24553|2018|Toyota|Camry|Sedan|Blue|57000|25000.0
+24554|2018|Toyota|Corolla|Sedan|Green|54000|20000.0
+24556|2018|Toyota|Highlander|SUV|White|60000|35000.0
+12356|2024|Ford|F-150|Truck|Red|20000|40000.0
+12357|2024|Ford|Mustang|Coupe|Blue|20000|50000.0
