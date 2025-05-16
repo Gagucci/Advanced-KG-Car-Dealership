@@ -23,7 +23,7 @@ public abstract class Contract {
     public String getDate() { return Date; }
     public String getCustomerName() { return customerName; }
     public String getCustomerEmail() { return customerEmail; }
-    public Vehicle getVehicleSold() { return vehicleSold; }
+    public static Vehicle getVehicleSold() { return vehicleSold; }
 
     public void setDate(String date) { this.Date = date; }
     public void setCustomerName(String customerName) { this.customerName = customerName; }
